@@ -10,8 +10,8 @@ from new_config import generate_config_file
 def main():
     parser = argparse.ArgumentParser()
     add = parser.add_argument
+    add('platform', choices=['snh', 'bej', 'gnz', 'shy', 'ckg'])
     add('vid', type=int)
-    add('platform', choices=['snh', 'bej', 'gnz', 'shy', 'ckg'], default='snh')
     add('-s', '--special', action='store_true')
     args = parser.parse_args()
     if args.platform == 'snh':
