@@ -91,7 +91,7 @@ def find_latest_perfnum(stage):
         if attrs.stage == stage and attrs.perfnum:
             logger.info(f'latest perf # from {file}')
             return int(attrs.perfnum)
-    return None
+    return 0
 
 
 def generate_config_file(date, time, platform, vid_input, special_stage, stage, m3u8):
@@ -203,5 +203,3 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
         subprocess.run(cmd)
     else:
         logger.info('Please remember to generate the thumbnail.')
-
-    utils.edit(file)
