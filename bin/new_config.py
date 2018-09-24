@@ -160,7 +160,6 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
             die('performance # not given')
 
         # Derive
-
         if team is not None:
             title = f'{date} {team} {stage} {perfnum:02d}'
         else:
