@@ -104,8 +104,8 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
     datetime = f'{date[:4]}-{date[4:6]}-{date[6:]}T{time}:00+08:00'
 
     group_abbrevs = ['snh', 'bej', 'gnz', 'shy', 'ckg']
-    if not platform:
-        platform = 'zhibo.ckg48.com'
+    if platform == 'zhibo.ckg48.com':
+        pass
     elif platform == 'live.snh48.com':
         die(f'unrecognized platform {platform}')
     elif platform in [f'live.{g}48.com' for g in group_abbrevs]:
