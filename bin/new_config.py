@@ -196,7 +196,7 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
 
     # Generate thumbnail
     hr()
-    if stage:
+    if not special_stage:
         logger.info('Generating thumbanil...')
         logger.info(f'thumbnail {stage} {date} {perfnum:02d}')
         cmd = [THUMBNAILER, stage, date, f'{perfnum:02d}']
