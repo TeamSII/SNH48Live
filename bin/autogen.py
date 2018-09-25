@@ -2,6 +2,7 @@
 
 import argparse
 import re
+import sys
 
 import requests
 
@@ -26,9 +27,12 @@ def main():
     except AttributeError:
         stage = stage_pattern
     m = re.search('<span class="title2">.*(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d{2}:\d{2}):\d{2}</span>', resp)
-    date = m.group('date').replace('-', '')
-    time = m.group('time')
-    m3u8 = re.findall('https?://.*\.m3u8[^"]*', resp)[0]
+    try:
+        date = m.group('date').replace('-', '')
+        time = m.group('time')
+        m3u8 = re.findall('https?://.*\.m3u8[^"]*', resp)[0]
+    except (AttributeError, IndexError):
+        sys.exit('The video ID %d seems to be invalid.' % args.vid)
     try:
         generate_config_file(date, time, platform, args.vid, args.special, stage, m3u8)
     except KeyError as e:

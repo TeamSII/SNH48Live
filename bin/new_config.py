@@ -23,9 +23,11 @@ STAGES = [
     ('Team NⅡ', '以爱之名'),
     ('Team HⅡ', '美丽世界'),
     ('Team HⅡ', 'New H Stars'),
+    ('Team HⅡ', '头号新闻'),
     ('Team X', '命运的X号'),
     ('Team XⅡ', '代号XⅡ'),
     ('Team Ft', '梦想的旗帜'),
+    ('Team Ft', '双面偶像'),
     (None, '我们向前冲'),
 ]
 
@@ -75,7 +77,7 @@ def find_stage(stage):
     for team, stage_ in STAGES:
         if stage_ == stage:
             return team
-    raise KeyError(f'stage {stage} not recognized')
+    raise KeyError('stage %s not recognized' % stage)
 
 
 def find_latest_live_id():
