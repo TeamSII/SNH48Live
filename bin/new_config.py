@@ -18,13 +18,14 @@ from common import BIN, VIDEO_CONFIGS_DIR, logger
 THUMBNAILER = BIN / 'thumbnail'
 
 STAGES = [
-    ('Team HⅡ', 'New H Stars'),
-    ('Team Ft', '梦想的旗帜'),
-    ('Team X', '命运的X号'),
     ('Team SⅡ', '第48区'),
+    ('Team SⅡ', '美丽48区'),
     ('Team NⅡ', '以爱之名'),
     ('Team HⅡ', '美丽世界'),
+    ('Team HⅡ', 'New H Stars'),
+    ('Team X', '命运的X号'),
     ('Team XⅡ', '代号XⅡ'),
+    ('Team Ft', '梦想的旗帜'),
     (None, '我们向前冲'),
 ]
 
@@ -74,7 +75,7 @@ def find_stage(stage):
     for team, stage_ in STAGES:
         if stage_ == stage:
             return team
-    die(f'stage {stage} not recognized')
+    raise KeyError(f'stage {stage} not recognized')
 
 
 def find_latest_live_id():
@@ -190,7 +191,6 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
         thumbnail=thumbnail,
         playlists=playlists,
     )
-    print(content, end='')
     with open(file, 'w') as fp:
         fp.write(content)
 
