@@ -30,10 +30,10 @@ STAGES = [
     ('Team Ft', '双面偶像'),
     (None, '我们向前冲'),
     ('Team HⅡ', '头号新闻'),
-	('Team SⅡ', '美丽48区'),
-	('Team Ft', '双面偶像'),
-	('Team SⅡ', '重生计划'),
-	('Team NⅡ', 'N.E.W'),
+    ('Team SⅡ', '美丽48区'),
+    ('Team Ft', '双面偶像'),
+    ('Team SⅡ', '重生计划'),
+    ('Team NⅡ', 'N.E.W'),
 ]
 
 TEAM_TAGS = {
