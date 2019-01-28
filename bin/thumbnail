@@ -73,7 +73,7 @@ if [[ $baseimage == */* ]]; then
     input=$baseimage
 else
     input=$base_dir/$baseimage
-    if [[ $baseimage == *.(png|jpg)]]; then
+    if [[ $baseimage == *.(png|jpg) ]]; then
         [[ -f $input ]] || die "${(q-)input} does not exist."
     else
         if [[ -f $input.png ]]; then
