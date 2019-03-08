@@ -112,8 +112,10 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
     datetime = f'{date[:4]}-{date[4:6]}-{date[6:]}T{time}:00+08:00'
 
     group_abbrevs = ['snh', 'bej', 'gnz', 'shy', 'ckg']
-    if platform == 'zhibo.ckg48.com':
+    if platform == 'live.48.cn':
         pass
+    elif platform == 'zhibo.ckg48.com'
+        die(f'historical address format since 27/02/2019 {platform}')
     elif platform == 'live.snh48.com':
         die(f'unrecognized platform {platform}')
     elif platform in [f'live.{g}48.com' for g in group_abbrevs]:
@@ -123,7 +125,7 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
     platform_short = platform[5:8] if platform != 'zhibo.ckg48.com' else 'snh'
     assert platform_short in group_abbrevs
 
-    if platform == 'zhibo.ckg48.com':
+    if platform == 'live.48.cn':
         vid_default = find_latest_live_id() + 1
         vid = vid_input or vid_default
     else:
@@ -140,7 +142,7 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
 
         # Derive
         title = f'{date} {stage}'
-        vod = f'http://zhibo.ckg48.com/Index/invedio/id/{vid}'
+        vod = f'https://live.48.cn/Index/invedio/club/1/id/{vid}'
         tags = ['SNH48']
         thumbnail = ''
         playlists = ['全部', '全部公演', '特别公演']
@@ -173,7 +175,7 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
         else:
             # Multi-team, e.g. 我们向前冲
             title = f'{date} {stage} {perfnum:02d}'
-        vod = f'http://{platform}/Index/invedio/id/{vid}'
+        vod = f'http://{platform}/Index/invedio/club/1/id/{vid}'
         tags = ['SNH48', stage]
         tags.extend(TEAM_TAGS[team])
         thumbnail = f'{date}-{stage}-{perfnum:02d}.png'
