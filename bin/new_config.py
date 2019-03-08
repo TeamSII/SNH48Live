@@ -114,7 +114,7 @@ def generate_config_file(date, time, platform, vid_input, special_stage, stage, 
     group_abbrevs = ['snh', 'bej', 'gnz', 'shy', 'ckg']
     if platform == 'live.48.cn':
         pass
-    elif platform == 'zhibo.ckg48.com'
+    elif platform == 'zhibo.ckg48.com':
         die(f'historical address format since 27/02/2019 {platform}')
     elif platform == 'live.snh48.com':
         die(f'unrecognized platform {platform}')
