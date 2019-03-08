@@ -43,3 +43,7 @@ Helpers depend on Python 3.6+ and Zsh 5.0+.
 - [`thumbnail`](bin/thumbnail): generate custom thumbnails.
 - [`update-metadata`](bin/update-metadata): update metadata of videos in various ways (check the subcommands).
 - [`upload`](bin/upload): YouTube video uploader (WIP).
+
+## Notices
+
+Notices state unexpected config info changes which due to significant system/web modifications officially.
