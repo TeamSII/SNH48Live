@@ -47,3 +47,5 @@ Helpers depend on Python 3.6+ and Zsh 5.0+.
 ## Notices
 
 Notices state unexpected config info changes which due to significant system/web modifications officially.
+
+- [`Replay website address`](https://live.48.cn/Index/invedio/club/1/id/2608/): since 27th Feb 2019, SNH48 has implemented a maintenance and amended their replay website address format into 'https://live.48.cn/Index/invedio/club/1/id/xxxx/' as well as the video numbers have turned into 4 digit. I'd update video descriptions for replays on and after that date to exactly the new format, but will not edit those videos before that date cuz not worth that much work.
